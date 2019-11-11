@@ -190,6 +190,7 @@ func (c *Client) connectionLoop() {
 		d := websocket.Dialer{
 			ReadBufferSize:   1024,
 			WriteBufferSize:  1024,
+			EnableCompression: true,
 			HandshakeTimeout: 45 * time.Second,
 			Subprotocols:     []string{chshare.ProtocolVersion},
 		}
